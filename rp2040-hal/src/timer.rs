@@ -316,7 +316,7 @@ macro_rules! impl_alarm {
                 let timer = unsafe { &*pac::TIMER::PTR };
 
                 // This lock is for time-criticality
-                cortex_m::interrupt::free(|_| {
+                cortex_m::interrupt::free(|| {
                     let alarm = &timer.$timer_alarm();
 
                     // safety: This is the only code in the codebase that accesses memory address $timer_alarm

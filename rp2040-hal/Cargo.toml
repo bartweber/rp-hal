@@ -18,7 +18,8 @@ targets = ["thumbv6m-none-eabi"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-cortex-m = "0.7.2"
+#cortex-m = "0.7.2"
+cortex-m = { git = "https://github.com/rust-embedded/cortex-m", branch = "master" }
 embedded_hal_0_2 = { package = "embedded-hal", version = "0.2.5", features = [
   "unproven",
 ] }
@@ -30,7 +31,9 @@ embedded-io = "0.6.1"
 fugit = "0.3.6"
 itertools = { version = "0.10.1", default-features = false }
 nb = "1.0"
-rp2040-pac = { version = "0.6.0", features = ["critical-section"] }
+#rp2040-pac = { version = "0.6.0", features = ["critical-section"] }
+rp2040-pac = { git = "https://github.com/bartweber/rp2040-pac", features = ["critical-section"] }
+
 paste = "1.0"
 pio = "0.2.0"
 rp2040-hal-macros = { version = "0.1.0", path = "../rp2040-hal-macros" }

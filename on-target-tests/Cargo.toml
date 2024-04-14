@@ -41,7 +41,8 @@ name = "gpio"
 harness = false
 
 [dependencies]
-cortex-m = "0.7"
+#cortex-m = "0.7"
+cortex-m = { git = "https://github.com/rust-embedded/cortex-m", branch = "master" }
 cortex-m-rt = "0.7"
 embedded_hal_0_2 = { package = "embedded-hal", version = "0.2.5", features = [
   "unproven",
